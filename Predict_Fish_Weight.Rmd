@@ -46,6 +46,7 @@ as.data.frame(summary.out$outmat)
 library(car)
 subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2")
 ```
+Best two regression model is the height and width variables. The adjr2 model for this would be 0.9400. One other note, this is the best regression model overall. The reason for this is because it is the highest on the adjr2 scale. 
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
 
