@@ -52,11 +52,57 @@ Best two regression model is the height and width variables. The adjr2 model for
 
 #Bream Model 
 
+```{r}
+breamd<-filter(fishd, Species=="Bream")
+breamd2<-select(breamd,-Species)
+```
+
+```{r}
+library(leaps)
+regsubsets.out <-
+    regsubsets(Weight ~ .,
+               data = breamd2,
+               nbest = 1,       # 1 best model for each number of predictors
+               nvmax = NULL,    # NULL for no limit on number of variables
+               force.in = NULL, force.out = NULL,
+               method = "exhaustive")
+
+summary.out <- summary(regsubsets.out)
+as.data.frame(summary.out$outmat)
+library(car)
+subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2")
+```
+```{r}
+breamm<-lm(Weight~Length2+Height,breamd2)
+summary.lm(breamm)
+```
+
+Best two regression model is the height and length2 variables. The adjr2 model for this would be 0.9356. One other note, is that this is not the highest regression model as the chart shows a higher model L1-H-W. The reason for this is because it is the highest on the adjr2 scale.
+
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
 ## Smelt Model 
 
+```{r}
+smeltd<-filter(fishd, Species=="Smelt")
+smeltd2<-select(smeltd,-Species)
+```
 
+```{r}
+library(leaps)
+regsubsets.out <-
+    regsubsets(Weight ~ .,
+               data = smeltd2,
+               nbest = 1,       # 1 best model for each number of predictors
+               nvmax = NULL,    # NULL for no limit on number of variables
+               force.in = NULL, force.out = NULL,
+               method = "exhaustive")
+
+summary.out <- summary(regsubsets.out)
+as.data.frame(summary.out$outmat)
+library(car)
+subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2")
+```
 
 # Discussion and Final Conclusion
 
