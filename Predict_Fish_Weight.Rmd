@@ -105,22 +105,13 @@ subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2
 ```
 
 ```{r}
-smeltm<-lm(Length2~Weight,smeltd2)
+smeltm<-lm(Weight~Length2,smeltd2)
 summary.lm(smeltm)
 ```
 
-```{r}
-smeltm<-lm(Length1~Length2+Height+Weight,smeltd2)
-summary.lm(smeltm)
-```
-
-```{r}
-smeltm<-lm(Length1~Length2+Length3+Height+Weight,smeltd2)
-summary.lm(smeltm)
-```
-
-Best two regression model for Smelt is the Length2 and Weight variables. The adjr2 model for this would be 0.9168. One other note, is that this is not the highest regression model as the chart shows a higher model of L1-L2-L3-H-W. The adjr2 for that modele equates to 0.9979 making it the heights model. 
+Best two regression model for Smelt is the Length2 and Weight variables. The adjr2 model for this would be 0.9168. One other note, is that this is not the highest regression model as the chart shows a higher model of L1-L2-L3-H-W. The adjr2 for that model equates to 0.9979 making it the heightest model. 
 
 # Discussion and Final Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+For each two regression models each are different for the three various fish. 
