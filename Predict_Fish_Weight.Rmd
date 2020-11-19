@@ -46,6 +46,7 @@ as.data.frame(summary.out$outmat)
 library(car)
 subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2")
 ```
+
 Best two regression model is the height and width variables. The adjr2 model for this would be 0.9400. One other note, this is the best regression model overall. The reason for this is because it is the highest on the adjr2 scale. 
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
@@ -109,9 +110,10 @@ smeltm<-lm(Weight~Length2,smeltd2)
 summary.lm(smeltm)
 ```
 
-Best two regression model for Smelt is the Length2 and Weight variables. The adjr2 model for this would be 0.9168. One other note, is that this is not the highest regression model as the chart shows a higher model of L1-L2-L3-H-W. The adjr2 for that model equates to 0.9979 making it the heightest model. 
+Best two regression model for Smelt is the Length2 and Weight variables. The adjr2 model for this would be 0.9168. One other note, is that this is not the highest regression model as the chart shows a higher model of L1-L2-L3-H-W. The adjr2 for that model equates to 0.9979 making it the highest model. 
 
 # Discussion and Final Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
-For each two regression models each are different for the three various fish. 
+
+For each two regression models each are different for the three various fish. We used two different variables for each different fish to find the best explanation of a two regression model that illustrates the weight of this fish. To do this we used height and width, length and width as well as length and height. This tells us that the weight varies based on each different fish.  
